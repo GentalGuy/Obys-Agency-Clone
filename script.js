@@ -6,6 +6,21 @@ function locomotiveAnimation() {
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
     smooth: true,
+    smoothMobile: true,
+    getDirection: true,
+		smartphone: {
+			smooth: true,
+      getDirection:true,
+		},
+    mobile:{
+      smooth: true,
+      getDirection:true,
+    },
+		tablet: {
+			smooth: true,
+      getDirection:true,
+      breakpoints: 0,
+    }
   });
 
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
@@ -38,6 +53,15 @@ function locomotiveAnimation() {
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 }
+
+
+// const lenis = new Lenis()
+
+// lenis.on('scroll', (e) => {
+//   console.log(e)
+// })
+
+// lenis.on('scroll', ScrollTrigger.update)
 
 function loadingAnimation() {
   var tl = gsap.timeline();
